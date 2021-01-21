@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Names</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header></header>
+    <main>
+    <div class="grid">
+        <div class="upper">
+            <p>
+                <h1>Names and amounts, order by amount, most popular first</h1>
+                <ul>
+                    <% for (let i in names) { %>
+                    <li>
+                        <%= `${names[i].name}, ${names[i].amount}` %>
+                    </li>
+                <% } %>
+                </ul>
+          
+          </div>
+        <div class="upper"> 
+            <p>
+                <h1>Names in alphabetical order</h1>
+                <ul>
+                    <% for(let i in alpha){ %>
+                        <li>
+                            <%= alpha[i] %>
+                        </li>
+                    <% } %>
+                </ul>
+                <br />
+                <h1>
+                    The total amount of all the names: <%= length %>
+                </h1>
+                    
+                </>
+            </p>
+        </div>
+    
+  
+    <div class="upper">
+        <form action="/get-amount" method="POST">
+            <label for="name">Enter name</label>
+            <input type="text" name="name" id="name"/>
+            <button type="submit">Get the amount</button>
+        </form>
+        
+            <% if(amount){ %>
+                <p>Amount of the name <%= wanted %>: <%= amount %></p>
+            <% } %>
+    </div>
+    </div>
+    </main>
+   
+</body>
+</html>
