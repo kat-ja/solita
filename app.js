@@ -7,11 +7,6 @@ let {names} = require('./names.json');
 // List names and amounts, order by amount, most popular first
 names.sort((a, b) => b.amount - a.amount);
 
-let $names = '';
-for(let i in names){
-    $names += `<li>${names[i].name}, ${names[i].amount}</li>`;
-}
-
 // List names in alphabetical order
 let namesAlpha = [];
 for (let i = 0; i < names.length; i++) {
